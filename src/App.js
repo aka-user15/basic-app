@@ -59,16 +59,18 @@ function App() {
               <h1>First: {pat.name.first}</h1>
               <h1>Last: {pat.name.last}</h1>
             </div>
+            {/* Check for allergies and map over them */}
            { (pat.allergies ? <div className="allergies">
               {pat.allergies.map(val => (
                 <h3 style={{
                   color: '#ff0006'
                 }}>{val}</h3>
               ))}  
-            </div> : null)}
+            </div> : <h3>No <br /> Allergies</h3>)}
             
             <div className="treatments">
               <h2>Treatments</h2>
+              {/* Map over treatments */}
               {pat.treatments.map(val => (
                 <>
                   <h3 style={{
@@ -81,7 +83,8 @@ function App() {
                 </>
               ))}  
             </div>
-            <div className="allergies">
+            <div className="prescription">
+              
               {pat.prescription.map(val => (
                 <>
                   <h3 style={{
